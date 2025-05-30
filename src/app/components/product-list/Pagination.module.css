@@ -1,0 +1,30 @@
+/* app/components/Pagination.module.css */
+
+/* Estilos para o container de paginação */
+.paginationContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem; /* Espaço superior da paginação */
+}
+
+.pageButton {
+  padding: 0.5rem 1rem;
+  background-color: #0070f3; /* Cor de fundo do botão */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin: 0 0.5rem; /* Espaço entre os botões */
+  transition: background-color 0.2s; /* Transição suave para a cor de fundo */
+}
+
+.pageButton:disabled {
+  background-color: #ccc; /* Cor de fundo quando o botão estiver desabilitado */
+  cursor: not-allowed; /* Muda o cursor para indicar que não pode clicar */
+}
+
+.currentPage {
+  font-size: 1.2rem;
+  margin: 0 1rem; /* Espaço entre o número da página e os botões */
+}

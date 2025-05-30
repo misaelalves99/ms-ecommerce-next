@@ -1,0 +1,53 @@
+/* app/checkout/[productId]/AddressSection.module.css */
+
+.deliveryAddress {
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+.deliveryAddress h2 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.addressCard {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #eee;
+  border-radius: 6px;
+  background-color: #f9f9f9;
+}
+
+.principalAddress {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: #f0ad4e;
+  color: white;
+  border-radius: 4px;
+  font-size: 0.8em;
+  margin-bottom: 10px;
+}
+
+.addressCard p {
+  margin: 5px 0;
+  color: #555;
+}
+
+.changeAddressButton {
+  background: none;
+  border: 1px solid #007bff;
+  color: #007bff;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 10px;
+  font-size: 0.9em;
+  transition: background-color 0.3s ease;
+}
+
+.changeAddressButton:hover {
+  background-color: #e0f7fa;
+}

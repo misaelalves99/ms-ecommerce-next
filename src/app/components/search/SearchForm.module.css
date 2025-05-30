@@ -1,0 +1,59 @@
+/* 01-Layout geral */
+.searchForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  border-radius: 16px;
+  max-width: 100%;
+  flex-wrap: wrap;
+}
+
+/* 02-Campo de input */
+.input {
+  flex: 1;
+  min-width: 200px;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #dcdcdc;
+  border-radius: 12px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  background-color: #fff;
+  color: #333;
+}
+
+.input:focus {
+  border-color: #0070f3;
+  box-shadow: 0 0 0 2px rgba(0, 112, 243, 0.15);
+  outline: none;
+}
+
+/* 03-Botão de busca */
+.button {
+  padding: 0.75rem 1.25rem;
+  background-color: #0070f3;
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #0059c1;
+}
+
+/* 04-Responsividade */
+@media (max-width: 500px) {
+  .searchForm {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .button {
+    width: 100%;
+  }
+}

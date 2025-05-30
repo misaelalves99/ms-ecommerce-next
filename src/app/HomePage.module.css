@@ -1,0 +1,59 @@
+.container {
+  padding: 2rem 0;
+  background-color: #f4f8ff;
+}
+
+.hero {
+  background: linear-gradient(to right, #0050FA, #00AF3D);
+  color: white;
+  padding: 4rem 2rem;
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.description {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.heroButton {
+  background-color: white;
+  color: #0050FA;
+  font-size: 1.125rem;
+  padding: 1rem 2rem;
+  border: 2px solid white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.heroButton:hover {
+  background-color: #00AF3D;
+  color: white;
+  border-color: #00AF3D;
+}
+
+.featuredSection {
+  max-width: 1200px;
+  margin: 3rem auto;
+  padding: 2rem 1rem;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 80, 250, 0.1);
+}
+
+.sectionTitle {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #0050FA;
+}

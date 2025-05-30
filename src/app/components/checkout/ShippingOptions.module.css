@@ -1,0 +1,57 @@
+/* app/checkout/[productId]/ShippingOptions.module.css */
+
+.shippingOptions {
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+.shippingOptions h2 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.shippingOption {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #eee;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  background-color: #f9f9f9;
+  cursor: pointer;
+}
+
+.shippingOption.selected {
+  border-color: #007bff;
+  background-color: #e0f7fa;
+}
+
+.shippingOption input[type='radio'] {
+  margin-right: 10px;
+}
+
+.shippingOption label {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.shippingName {
+  font-weight: bold;
+  color: #333;
+}
+
+.deliveryTime {
+  color: #777;
+  font-size: 0.9em;
+}
+
+.shippingPrice {
+  font-weight: bold;
+  color: #28a745;
+}

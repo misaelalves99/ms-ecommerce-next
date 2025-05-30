@@ -1,0 +1,120 @@
+/* app/checkout/[productId]/OrderSummary.module.css */
+
+.orderSummary {
+  flex: 1;
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: #fff;
+  position: sticky;
+  top: 20px;
+  height: fit-content;
+}
+
+.orderSummary h2 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.summaryItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.summaryItem:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.productInfo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.summaryImage {
+  border-radius: 4px;
+}
+
+.summaryProductName {
+  color: #555;
+  font-size: 0.9em;
+}
+
+.quantityControl {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.quantityControl button {
+  background: none;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9em;
+}
+
+.quantityControl span {
+  font-size: 1em;
+  color: #333;
+  min-width: 20px;
+  text-align: center;
+}
+
+.summaryPrice {
+  font-weight: bold;
+  color: #333;
+}
+
+.summarySubtotal,
+.summaryShipping,
+.summaryTotal {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  font-size: 1em;
+}
+
+.summaryTotal {
+  font-weight: bold;
+  font-size: 1.2em;
+  padding-top: 15px;
+  border-top: 1px solid #ddd;
+}
+
+.paymentInfo {
+  margin-top: 15px;
+  color: #666;
+  font-size: 0.9em;
+  text-align: center;
+}
+
+.goToPaymentButton {
+  background-color: #10b981;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1.1em;
+  width: 100%;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.goToPaymentButton:hover {
+  background-color: #059669;
+}
+
+.goToPaymentButton:active {
+  background-color: #047857;
+  transform: scale(0.97);
+}

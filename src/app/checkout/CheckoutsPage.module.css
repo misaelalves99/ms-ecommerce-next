@@ -1,0 +1,21 @@
+.checkoutContainer {
+  display: flex;
+  padding: 20px;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.checkoutPanel {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.notFound {
+  padding: 20px;
+  text-align: center;
+  color: #dc3545;
+  font-size: 1.2em;
+}
