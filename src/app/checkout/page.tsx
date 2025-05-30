@@ -6,14 +6,14 @@ import React, { useEffect, useState } from 'react';
 import { Product } from '@/app/types/product';
 import { CheckoutData } from '@/app/types/checkout';
 import { getProducts } from '@/app/lib/api/products';
-import styles from './CheckoutsPage.module.css';
+import styles from './CheckoutPage.module.css';
 
 import AddressSection from '../components/checkout/AddressSection';
 import ShippingOptions, { ShippingOption } from '../components/checkout/ShippingOptions';
 import CheckoutForm from '../components/checkout/CheckoutForm';
 import OrderSummary from '../components/checkout/OrderSummary';
 
-const CheckoutPage = ({ params }: { params: { productId: string } }) => {
+const CheckoutPage = ({ params }: { params: Record<string, string> }) => {
   const [product, setProduct] = useState<Product | null>(null);
   const [checkoutData, setCheckoutData] = useState<CheckoutData | null>(null);
   const [quantity, setQuantity] = useState(1);
