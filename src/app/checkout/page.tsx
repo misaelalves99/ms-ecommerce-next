@@ -6,7 +6,7 @@ import React, { useEffect, useState } from 'react';
 import { Product } from '@/app/types/product';
 import { CheckoutData } from '@/app/types/checkout';
 import { getProducts } from '@/app/lib/api/products';
-import styles from './CheckoutPage.module.css';
+import styles from './CheckoutsPage.module.css';
 
 import AddressSection from '../components/checkout/AddressSection';
 import ShippingOptions, { ShippingOption } from '../components/checkout/ShippingOptions';
