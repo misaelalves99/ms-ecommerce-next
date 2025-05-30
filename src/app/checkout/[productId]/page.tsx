@@ -1,11 +1,8 @@
 // app/checkout/[productId]/page.tsx
 
-import CheckoutClient from '../../checkout/[productId]/CheckoutClient';
+import CheckoutClient from './CheckoutClient';
 
-interface PageProps {
-  params: { productId: string };
-}
+export default async function CheckoutPage({ params }: { params: { productId: string } }) {
 
-export default function CheckoutPage({ params }: PageProps) {
   return <CheckoutClient productId={params.productId} />;
 }
