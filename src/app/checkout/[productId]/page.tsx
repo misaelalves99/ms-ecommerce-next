@@ -13,7 +13,7 @@ import ShippingOptions, { ShippingOption } from '../../components/checkout/Shipp
 import CheckoutForm from '../../components/checkout/CheckoutForm';
 import OrderSummary from '../../components/checkout/OrderSummary';
 
-const CheckoutPage = ({ params }: { params: { productId: string } }) => {
+const CheckoutPage = ({ params }: { params: Record<string, string> }) => {
   const [product, setProduct] = useState<Product | null>(null);
   const [checkoutData, setCheckoutData] = useState<CheckoutData | null>(null);
   const [quantity, setQuantity] = useState(1);
