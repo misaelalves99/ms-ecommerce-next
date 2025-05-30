@@ -1,4 +1,4 @@
-// app/checkout/page.tsx
+// app/checkout/[productId]/CheckoutClient.tsx
 
 'use client';
 
@@ -6,14 +6,18 @@ import React, { useEffect, useState } from 'react';
 import { Product } from '@/app/types/product';
 import { CheckoutData } from '@/app/types/checkout';
 import { getProducts } from '@/app/lib/api/products';
-import styles from './CheckoutsPage.module.css';
+import styles from './CheckoutClient.module.css';
 
-import AddressSection from '../components/checkout/AddressSection';
-import ShippingOptions, { ShippingOption } from '../components/checkout/ShippingOptions';
-import CheckoutForm from '../components/checkout/CheckoutForm';
-import OrderSummary from '../components/checkout/OrderSummary';
+import AddressSection from '../../components/checkout/AddressSection';
+import ShippingOptions, { ShippingOption } from '../../components/checkout/ShippingOptions';
+import CheckoutForm from '../../components/checkout/CheckoutForm';
+import OrderSummary from '../../components/checkout/OrderSummary';
 
-const CheckoutPage = ({ params }: { params: Record<string, string> }) => {
+interface CheckoutClientProps {
+  productId: string;
+}
+
+const CheckoutClient: React.FC<CheckoutClientProps> = ({ productId }) => {
   const [product, setProduct] = useState<Product | null>(null);
   const [checkoutData, setCheckoutData] = useState<CheckoutData | null>(null);
   const [quantity, setQuantity] = useState(1);
@@ -23,8 +27,6 @@ const CheckoutPage = ({ params }: { params: Record<string, string> }) => {
     price: 0,
     deliveryTime: '15 de maio, quinta',
   });
-
-  const productId = params.productId;
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -81,4 +83,4 @@ const CheckoutPage = ({ params }: { params: Record<string, string> }) => {
   );
 };
 
-export default CheckoutPage;
+export default CheckoutClient;
