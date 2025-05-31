@@ -2,10 +2,9 @@
 
 'use client';
 
-import React, { useState } from 'react'; // removi useEffect
+import React, { useState } from 'react';
 import { Product } from '@/app/types/product';
 import { CheckoutData } from '@/app/types/checkout';
-// import { getProducts } from '@/app/lib/api/products'; // removido mesmo
 import styles from './CheckoutClient.module.css';
 
 import AddressSection from '../../components/checkout/AddressSection';

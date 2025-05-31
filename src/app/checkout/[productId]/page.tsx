@@ -11,8 +11,13 @@ export const metadata: Metadata = {
 };
 
 export const dynamic = 'force-dynamic';
+interface CheckoutPageProps {
+  params: {
+    productId: string;
+  };
+}
 
-export default async function CheckoutPage({ params }: { params: { productId: string } }) {
+export default async function CheckoutPage({ params }: CheckoutPageProps) {
   const { productId } = params;
 
   try {
