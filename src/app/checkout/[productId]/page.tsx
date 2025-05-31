@@ -10,6 +10,8 @@ export const metadata: Metadata = {
   description: 'Conclua seu pedido e forneça seus dados de entrega.',
 };
 
+export const dynamic = 'force-dynamic';
+
 export default async function CheckoutPage({ params }: { params: { productId: string } }) {
   const { productId } = params;
 
