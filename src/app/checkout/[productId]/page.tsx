@@ -1,24 +1,35 @@
 // app/checkout/[productId]/page.tsx
 
 import type { Metadata } from 'next';
-import React, { use } from 'react';
+import { notFound } from 'next/navigation';
 import CheckoutClient from './CheckoutClient';
+import { getProducts } from '@/app/lib/api/products';
 
 export const metadata: Metadata = {
   title: 'Finalizar Compra',
   description: 'Conclua seu pedido e forneça seus dados de entrega.',
 };
 
-interface ParamsType {
-  productId: string;
-}
-
 interface CheckoutPageProps {
-  params: Promise<ParamsType>;
+  params: {
+    productId: string;
+  };
 }
 
-export default function CheckoutPage({ params }: CheckoutPageProps) {
-  const resolvedParams = use(params);
+export default async function CheckoutPage({ params }: CheckoutPageProps) {
+  const { productId } = params;
 
-  return <CheckoutClient productId={resolvedParams.productId} />;
+  try {
+    const allProducts = await getProducts();
+    const product = allProducts.find((p) => String(p.id) === String(productId));
+
+    if (!product) {
+      return notFound();
+    }
+
+    return <CheckoutClient product={product} />;
+  } catch (error) {
+    console.error(`Erro ao buscar produto ${productId} no servidor:`, error);
+    return notFound();
+  }
 }

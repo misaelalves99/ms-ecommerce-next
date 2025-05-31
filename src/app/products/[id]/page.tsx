@@ -3,26 +3,28 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
+import { useParams } from 'next/navigation';
 import { useCart } from '../../context/CartContext';
 import ProductDetails from '../../components/product-list/ProductDetails';
 import styles from './ProductPage.module.css';
 import { Product } from '../../types/product';
 import { getProducts } from '../../lib/api/products';
 
-const ProductPage = ({ params }: { params: { id: string } }) => {
+const ProductPage = () => {
+  const { id } = useParams();
+  const productId = String(id);
+
   const { addToCart } = useCart();
   const [product, setProduct] = useState<Product | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string>('');
-
-  const productId = params.id;
 
   useEffect(() => {
     const loadProduct = async () => {
       try {
         const allProducts = await getProducts();
         const foundProduct = allProducts.find(
-          (p) => String(p.id) === String(productId)
+          (p) => String(p.id) === productId
         );
 
         if (!foundProduct) {
