@@ -3,7 +3,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { notFound } from 'next/navigation';
+import { notFound, useParams } from 'next/navigation';
 import { getProducts } from '../../lib/api/products';
 import { CheckoutData } from '../../types/checkout';
 import type { Product } from '../../types/product';
@@ -17,8 +17,10 @@ import styles from './CheckoutPage.module.css';
 
 export const dynamic = 'force-dynamic';
 
-export default function CheckoutPage({ params }: { params: { productId: string } }) {
-  const { productId } = params;
+export default function CheckoutPage() {
+  const params = useParams();
+  const productId = params?.productId;
+
   const [product, setProduct] = useState<Product | null>(null);
   const [error, setError] = useState(false);
 
@@ -33,6 +35,10 @@ export default function CheckoutPage({ params }: { params: { productId: string }
 
   useEffect(() => {
     const fetchProduct = async () => {
+      if (!productId) {
+        setError(true);
+        return;
+      }
       try {
         const allProducts = await getProducts();
         const found = allProducts.find((p) => String(p.id) === String(productId));
