@@ -5,17 +5,14 @@ import CheckoutClient from './CheckoutClient';
 import { getProducts } from '@/app/lib/api/products';
 import type { Metadata } from 'next';
 
+import type { CheckoutPageProps } from '@/app/types/checkoutPage';
+
 export const metadata: Metadata = {
   title: 'Finalizar Compra',
   description: 'Conclua seu pedido e forneça seus dados de entrega.',
 };
 
 export const dynamic = 'force-dynamic';
-interface CheckoutPageProps {
-  params: {
-    productId: string;
-  };
-}
 
 export default async function CheckoutPage({ params }: CheckoutPageProps) {
   const { productId } = params;

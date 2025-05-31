@@ -3,18 +3,15 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Product } from '@/app/types/product';
+// import { Product } from '@/app/types/product'; // Removido, não usado diretamente
 import { CheckoutData } from '@/app/types/checkout';
+import type { CheckoutClientProps } from '@/app/types/checkoutClient';
 import styles from './CheckoutClient.module.css';
 
 import AddressSection from '../../components/checkout/AddressSection';
 import ShippingOptions, { ShippingOption } from '../../components/checkout/ShippingOptions';
 import CheckoutForm from '../../components/checkout/CheckoutForm';
 import OrderSummary from '../../components/checkout/OrderSummary';
-
-interface CheckoutClientProps {
-  product: Product;
-}
 
 const CheckoutClient: React.FC<CheckoutClientProps> = ({ product }) => {
   const [checkoutData, setCheckoutData] = useState<CheckoutData | null>(null);
