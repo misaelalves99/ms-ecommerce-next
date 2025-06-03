@@ -1,18 +1,9 @@
 // app/hooks/cartReducer.ts
 
 import { CartItem } from "../types/cart";
-import { Product } from "../types/product";
+import { CartState, CartAction } from "../types/cartReducer";
 
-type Action =
-  | { type: "ADD_TO_CART"; product: Product }
-  | { type: "REMOVE_FROM_CART"; productId: number | string }
-  | { type: "CLEAR_CART" };
-
-interface State {
-  items: CartItem[];
-}
-
-export const cartReducer = (state: State, action: Action): State => {
+export const cartReducer = (state: CartState, action: CartAction): CartState => {
   switch (action.type) {
     case "ADD_TO_CART": {
       const existingItem = state.items.find(

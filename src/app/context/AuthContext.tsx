@@ -4,19 +4,7 @@
 
 import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 import { useRouter } from 'next/navigation';
-
-interface User {
-  name: string;
-  email: string;
-  token?: string;
-}
-
-interface AuthContextType {
-  user: User | null;
-  login: (email: string, password: string) => Promise<void>;
-  register: (name: string, email: string, password: string) => Promise<void>;
-  logout: () => void;
-}
+import type { User, AuthContextType } from '@/app/types/auth';
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 

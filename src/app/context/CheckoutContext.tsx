@@ -1,22 +1,18 @@
 // app/context/CheckoutContext.tsx
 
-"use client";
+'use client';
 
-import { createContext, useState, useContext, ReactNode } from "react";
-import { CheckoutForm } from "@/app/types/checkout";
-
-type CheckoutContextType = {
-  form: CheckoutForm;
-  setForm: (form: CheckoutForm) => void;
-};
+import { createContext, useState, useContext, ReactNode } from 'react';
+import { CheckoutForm } from '@/app/types/checkout';
+import { CheckoutContextType } from '@/app/types/checkoutContext';
 
 const CheckoutContext = createContext<CheckoutContextType | undefined>(undefined);
 
 export const CheckoutProvider = ({ children }: { children: ReactNode }) => {
   const [form, setForm] = useState<CheckoutForm>({
-    name: "",
-    address: "",
-    paymentMethod: "credit_card",
+    name: '',
+    address: '',
+    paymentMethod: 'credit_card',
   });
 
   return (
@@ -29,7 +25,7 @@ export const CheckoutProvider = ({ children }: { children: ReactNode }) => {
 export const useCheckout = () => {
   const context = useContext(CheckoutContext);
   if (!context) {
-    throw new Error("useCheckout deve ser usado dentro de um CheckoutProvider");
+    throw new Error('useCheckout deve ser usado dentro de um CheckoutProvider');
   }
   return context;
 };

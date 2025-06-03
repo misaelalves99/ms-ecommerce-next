@@ -5,18 +5,7 @@
 import React, { createContext, useReducer, useContext, ReactNode } from 'react';
 import { Product } from '../types/product';
 import { CartItem } from '../types/cart';
-
-interface CartState {
-  items: CartItem[];
-  totalAmount: number;
-}
-
-type CartAction =
-  | { type: 'ADD_ITEM'; item: CartItem }
-  | { type: 'INCREMENT_ITEM'; product: Product }
-  | { type: 'DECREMENT_ITEM'; productId: string | number }
-  | { type: 'REMOVE_ITEM'; productId: string | number }
-  | { type: 'CLEAR_CART' };
+import { CartState, CartAction, CartContextType } from '../types/cartContext';
 
 const cartReducer = (state: CartState, action: CartAction): CartState => {
   switch (action.type) {
@@ -84,16 +73,6 @@ const cartReducer = (state: CartState, action: CartAction): CartState => {
       return state;
   }
 };
-
-interface CartContextType {
-  cartItems: CartItem[];
-  addToCart: (item: CartItem) => void;
-  incrementFromCart: (product: Product) => void;
-  decrementFromCart: (productId: string | number) => void;
-  removeFromCart: (productId: string | number) => void;
-  clearCart: () => void;
-  cartTotal: number;
-}
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
 

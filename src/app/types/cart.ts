@@ -13,6 +13,15 @@ export interface CartItem {
   category?: string;
 }
 
+export type CartItemType = {
+  id: string | number;
+  name: string;
+  price: number;
+  quantity: number;
+  imageUrl?: string;
+  category?: string;
+};
+
 export interface Cart {
   items: CartItem[];
   total: number;

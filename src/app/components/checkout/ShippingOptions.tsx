@@ -1,14 +1,9 @@
 // app/components/checkout/ShippingOptions.tsx
+
 'use client';
 
 import styles from './ShippingOptions.module.css';
-
-export interface ShippingOption {
-  id: string;
-  name: string;
-  price: number;
-  deliveryTime: string;
-}
+import type { ShippingOption } from '@/app/types/shipping';
 
 interface Props {
   selectedShipping: ShippingOption;

@@ -1,35 +1,25 @@
 // app/context/WishlistContext.tsx
 
-"use client";
+'use client';
 
-import { createContext, useContext, useState, useEffect, ReactNode } from "react";
-import { Product } from "../types/product";
-
-type WishlistContextType = {
-  wishlist: Product[];
-  addToWishlist: (product: Product) => void;
-  removeFromWishlist: (productId: number) => void;
-  isInWishlist: (productId: number) => boolean;
-};
+import { createContext, useContext, useState, useEffect, } from 'react';
+import { Product } from '../types/product';
+import { WishlistContextType, WishlistProviderProps, } from '../types/wishlistContext';
 
 const WishlistContext = createContext<WishlistContextType | undefined>(undefined);
-
-type WishlistProviderProps = {
-  children: ReactNode;
-};
 
 export const WishlistProvider = ({ children }: WishlistProviderProps) => {
   const [wishlist, setWishlist] = useState<Product[]>([]);
 
   useEffect(() => {
-    const stored = localStorage.getItem("favorites");
+    const stored = localStorage.getItem('favorites');
     if (stored) {
       setWishlist(JSON.parse(stored));
     }
   }, []);
 
   useEffect(() => {
-    localStorage.setItem("favorites", JSON.stringify(wishlist));
+    localStorage.setItem('favorites', JSON.stringify(wishlist));
   }, [wishlist]);
 
   const addToWishlist = (product: Product) => {
@@ -58,7 +48,7 @@ export const WishlistProvider = ({ children }: WishlistProviderProps) => {
 export const useWishlist = () => {
   const context = useContext(WishlistContext);
   if (!context) {
-    throw new Error("useWishlist deve ser usado dentro de um WishlistProvider");
+    throw new Error('useWishlist deve ser usado dentro de um WishlistProvider');
   }
   return context;
 };

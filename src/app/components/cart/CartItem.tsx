@@ -5,15 +5,7 @@
 import React from 'react';
 import Image from 'next/image';
 import styles from './CartItem.module.css';
-
-type CartItemType = {
-  id: string | number;
-  name: string;
-  price: number;
-  quantity: number;
-  imageUrl?: string;
-  category?: string;
-};
+import type { CartItemType } from '@/app/types/cart';
 
 interface CartItemProps {
   item: CartItemType;

@@ -9,7 +9,8 @@ import { CheckoutData } from '../../types/checkout';
 import type { Product } from '../../types/product';
 
 import AddressSection from '../../components/checkout/AddressSection';
-import ShippingOptions, { ShippingOption } from '../../components/checkout/ShippingOptions';
+import ShippingOptions from '../../components/checkout/ShippingOptions';
+import type { ShippingOption } from '../../types/shipping';
 import CheckoutForm from '../../components/checkout/CheckoutForm';
 import OrderSummary from '../../components/checkout/OrderSummary';
 
