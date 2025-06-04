@@ -1,9 +1,10 @@
 // app/components/checkout/OrderSummary.tsx
+
 'use client';
 
 import Image from 'next/image';
-import { Product } from '@/app/types/product';
-import { ShippingOption } from './ShippingOptions';
+import type { Product } from '@/app/types/product';
+import type { ShippingOption } from '@/app/types/shipping';
 import styles from './OrderSummary.module.css';
 import CheckoutActions from './CheckoutActions';
 
@@ -84,8 +85,11 @@ const OrderSummary = ({
         </p>
       </div>
 
-      {/* Substituindo o botão padrão pelo CheckoutActions */}
-      <CheckoutActions type="button" className={styles.goToPaymentButton} onClick={onGoToPayment}>
+      <CheckoutActions
+        type="button"
+        className={styles.goToPaymentButton}
+        onClick={onGoToPayment}
+      >
         Finalizar Compra
       </CheckoutActions>
     </div>

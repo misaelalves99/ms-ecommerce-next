@@ -2,8 +2,8 @@
 
 'use client';
 
-import styles from './ShippingOptions.module.css';
 import type { ShippingOption } from '@/app/types/shipping';
+import styles from './ShippingOptions.module.css';
 
 interface Props {
   selectedShipping: ShippingOption;
@@ -21,7 +21,9 @@ const ShippingOptions = ({ selectedShipping, onSelect }: Props) => (
     {mockShippingOptions.map((option) => (
       <div
         key={option.id}
-        className={`${styles.shippingOption} ${selectedShipping.id === option.id ? styles.selected : ''}`}
+        className={`${styles.shippingOption} ${
+          selectedShipping.id === option.id ? styles.selected : ''
+        }`}
         onClick={() => onSelect(option)}
       >
         <input
